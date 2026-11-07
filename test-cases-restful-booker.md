@@ -100,7 +100,7 @@
   ```
 - **Expected:** status 403 Forbidden
 - **Actual:** status 403 Forbidden, body `Forbidden`
-- **Result:** PASS
+- **Result:** Forbidden
 
 ![TC-05](images/tc-13.png)
 
@@ -127,6 +127,27 @@
 
 ![TC-07](images/tc-18.png)
 
+## TC-07: Partially update a booking
+
+- **Request:** PATCH `/booking/4`
+- **Expected:** booking updated, success status
+- **Actual:** status 200 OK
+- **Result:** PASS
+- **FROM:** 
+{
+    "bookingdates": {
+        "checkin": "2021-05-30",
+        "checkout": "2022-06-24"
+    }
+}
+- **TO:**
+{
+    "bookingdates": {
+        "checkin": "2021-05-20",
+        "checkout": "2022-06-14"
+    },
+}
+![TC-07](images/tc-19.png)
 ---
 
 ## Notes
