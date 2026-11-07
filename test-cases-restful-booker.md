@@ -32,7 +32,7 @@
 - **Actual:** status 200 OK, response contains `token`
 - **Result:** PASS
 
-![TC-01](images/tc-12.png)
+![TC-01](images/tc-08.png)
 
 ---
 
@@ -56,7 +56,7 @@
 - **Actual:** status 200 OK, `bookingid` is 803, `booking` contains all sent fields
 - **Result:** PASS (note: the API returns 200, not 201 Created)
 
-![TC-02](images/tc-18.png)
+![TC-02](images/tc-11.png)
 
 ---
 
@@ -67,7 +67,7 @@
 - **Actual:** status 200 OK, `firstname` is Patryk, `lastname` is Nowak, `totalprice` is 1111, dates are 2024-01-01 to 2024-01-10
 - **Result:** PASS
 
-![TC-03](images/tc-08.png)
+![TC-03](images/tc-12.png)
 
 ---
 
@@ -78,7 +78,7 @@
 - **Actual:** status 200 OK, list of objects with `bookingid` (12, 14, 15, 17, 23, ...)
 - **Result:** PASS (only ids are returned, so the filter itself was not verified against the booking data)
 
-![TC-04](images/tc-14.png)
+![TC-04](images/tc-09.png)
 
 ---
 
@@ -102,7 +102,7 @@
 - **Actual:** status 403 Forbidden, body `Forbidden`
 - **Result:** PASS
 
-![TC-05](images/tc-17.png)
+![TC-05](images/tc-13.png)
 
 ---
 
@@ -114,7 +114,7 @@
 - **Actual:** status 200 OK, `lastname` is Kozminski, `totalprice` is 2000, dates are 2024-02-03 to 2024-02-11
 - **Result:** PASS
 
-![TC-06](images/tc-13.png)
+![TC-06](images/tc-15.png)
 
 ---
 
@@ -125,7 +125,7 @@
 - **Actual:** status 201 Created, body `Created`
 - **Result:** PASS (note: DELETE returns 201 instead of the usual 200 or 204)
 
-![TC-07](images/tc-10.png)
+![TC-07](images/tc-18.png)
 
 ---
 
