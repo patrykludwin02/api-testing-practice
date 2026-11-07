@@ -100,7 +100,7 @@
   ```
 - **Expected:** status 403 Forbidden
 - **Actual:** status 403 Forbidden, body `Forbidden`
-- **Result:** Forbidden
+- **Result:** PASS
 
 ![TC-05](images/tc-13.png)
 
