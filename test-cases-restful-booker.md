@@ -15,6 +15,7 @@
 | TC-05 | PUT | `/booking/{id}` | Update a booking without authorization | PASS |
 | TC-06 | PUT | `/booking/{id}` | Update a booking with authorization | PASS |
 | TC-07 | DELETE | `/booking/{id}` | Delete a booking | PASS |
+| TC-08 | PATCH | `/booking/{id}` | Partially update a booking | PASS |
 
 ---
 
@@ -120,34 +121,33 @@
 
 ## TC-07: Delete a booking
 
-- **Request:** DELETE `/booking/803` with authorization
+- **Request:** DELETE `/booking/5` with authorization
 - **Expected:** booking deleted, success status
 - **Actual:** status 201 Created, body `Created`
 - **Result:** PASS (note: DELETE returns 201 instead of the usual 200 or 204)
 
 ![TC-07](images/tc-18.png)
 
-## TC-07: Partially update a booking
+---
 
-- **Request:** PATCH `/booking/4`
-- **Expected:** booking updated, success status
-- **Actual:** status 200 OK
-- **Result:** PASS
-- **FROM:** 
-{
+## TC-08: Partially update a booking
+
+- **Request:** PATCH `/booking/4` with authorization
+- **Body:**
+  ```json
+  {
     "bookingdates": {
-        "checkin": "2021-05-30",
-        "checkout": "2022-06-24"
+      "checkin": "2021-05-20",
+      "checkout": "2022-06-14"
     }
-}
-- **TO:**
-{
-    "bookingdates": {
-        "checkin": "2021-05-20",
-        "checkout": "2022-06-14"
-    },
-}
-![TC-07](images/tc-19.png)
+  }
+  ```
+- **Expected:** status 200, only `bookingdates` changed, other fields unchanged
+- **Actual:** status 200 OK, `checkin` is 2021-05-20, `checkout` is 2022-06-14, `firstname`, `lastname`, `totalprice`, `depositpaid` and `additionalneeds` are still present
+- **Result:** PASS
+
+![TC-08](images/tc-19.png)
+
 ---
 
 ## Notes
